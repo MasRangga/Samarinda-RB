@@ -29,13 +29,13 @@ const Navbar = () => {
           <div className="flex">
             <ul className="sm:flex justify-center hidden">
               <li className="p-2 mr-4 text-white hover:text-blue-400 cursor-pointer">
-                <Link to="/">Home</Link>
+                <Link to="/">Beranda</Link>
               </li>
               <li className="p-2 mr-4 text-white hover:text-blue-400 cursor-pointer">
-                <Link to="/about">About</Link>
+                <Link to="/about">Tentang Kami</Link>
               </li>
               <li className="p-2 mr-4 text-white hover:text-blue-400 cursor-pointer">
-                <Link to="/services">Services</Link>
+                <Link to="/services">Pelayanan</Link>
               </li>
               {/* Katalog Dropdown */}
               <li className="p-2 mr-4 text-white hover:text-blue-400 cursor-pointer relative">
@@ -61,7 +61,7 @@ const Navbar = () => {
                   <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1">
                     <li>
                       <Link
-                        to=""
+                        to="/produk"
                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                       >
                         Produk
@@ -69,7 +69,7 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        to=""
+                        to="/UMKM"
                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                       >
                         UMKM
@@ -84,8 +84,7 @@ const Navbar = () => {
             <button
               type="button"
               className="bg-blue-600 px-4 py-2 text-white hidden sm:block rounded-xl mr-2 hover:bg-blue-500"
-            >
-              Get Started
+            >Daftar Sekarang
             </button>
             <button onClick={() => setOpen(!open)} className="sm:hidden block">
               <GiHamburgerMenu size={30} className="mt-2 mr-2 text-white/70" />
@@ -98,13 +97,13 @@ const Navbar = () => {
           <div className="sm:hidden">
             <ul className="pt-4">
               <li className="text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4">
-                <Link to="/">Home</Link>
+                <Link to="/">Beranda</Link>
               </li>
               <li className="text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4">
-                <Link to="/about">About</Link>
+                <Link to="/about">Tentang Kami</Link>
               </li>
               <li className="text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4">
-                <Link to="/services">Services</Link>
+                <Link to="/services">Pelayanan</Link>
               </li>
               {/* Katalog Dropdown */}
               <li className="text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4 relative">
@@ -130,7 +129,7 @@ const Navbar = () => {
                   <ul className="mt-2 bg-gray-800 rounded-md py-1">
                     <li>
                       <Link
-                        to=""
+                        to="/produk"
                         className="block px-4 py-2 text-white hover:bg-gray-700"
                       >
                         Produk
@@ -138,7 +137,7 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        to=""
+                        to="/UMKM"
                         className="block px-4 py-2 text-white hover:bg-gray-700"
                       >
                         UMKM
@@ -153,7 +152,7 @@ const Navbar = () => {
                   type="button"
                   className="bg-blue-600 px-4 py-2 mb-5 text-white rounded-xl hover:bg-blue-500"
                 >
-                  Get Started
+                  Daftar Sekarang
                 </button>
               </li>
             </ul>
