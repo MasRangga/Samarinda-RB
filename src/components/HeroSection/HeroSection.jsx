@@ -23,7 +23,7 @@ const HeroSection = () => {
                   animate="visible"
                   transition={{ duration: 0.5, delay: 0.25 }}
                 >
-                  <h1 class="text-transparent bg-clip-text bg-gradient-to-r sm:text-8xl text-2xl from-blue-400 to-emerald-600 mb-3  font-bold leading-snug sm:text-[42px] lg:text-[40px] xl:text-[42px]">
+                  <h1 class=" sm:text-8xl text-2xl text-blue-500 mb-3  font-bold leading-snug sm:text-[42px] lg:text-[40px] xl:text-[42px]">
                     Here you can
                     <br />
                     <span className="sm:text-8xl text-6xl">

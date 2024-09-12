@@ -1,10 +1,11 @@
 import React from 'react'
+import Navbar from '../../components/Navbar/Navbar'
 
 const Umkmm = () => {
   return (
-    <div className="h-1">
-      Akuu Aja
-    </div>
+    <>
+        <Navbar />    
+    </>
   )
 }
 
