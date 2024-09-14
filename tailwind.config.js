@@ -8,8 +8,8 @@ export default {
         sans: ["Poppins", "sans-serif"],
       },
       colors: {
-        primary: "#ffc001",
-        secondary: "#ff9c01",
+        primary: "#ed0226",
+        secondary: "#001a41",
         dark: "#1e1e1e",
         light: "#f5f5f5",
       },

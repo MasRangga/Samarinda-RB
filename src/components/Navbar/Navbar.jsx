@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Icon from "../../images/level.png";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -6,14 +6,38 @@ import { GiHamburgerMenu } from "react-icons/gi";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [openKatalog, setOpenKatalog] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleDropdown = () => {
     setOpenKatalog(!openKatalog);
   };
 
+  // Scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="max-w-screen overflow-x-hidden font-poppins">
-      <nav className="bg-gray-900 fixed px-2 sm:h-auto sm:w-full w-screen z-20 left-0 right-0 top-0 border-b border-gray-400">
+      <nav
+        className={`fixed top-0 left-0 right-0 w-full z-20 transition-all duration-300 ${
+          scrolled
+            ? "bg-white shadow-lg backdrop-blur-sm"
+            : "bg-white shadow-lg"
+        }`}
+        style={{ height: scrolled ? "80px" : "100px" }} // Dynamic height
+      >
         {/* Desktop nav */}
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:p-4 pb-2">
           <Link to="/" className="flex items-center">
@@ -22,23 +46,23 @@ const Navbar = () => {
               alt="icon"
               className="hidden sm:block sm:w-[35px] sm:h-[35px]"
             />
-            <span className="ml-2 mt-2 sm:mt-0 text-white font-semibold text-xl">
+            <span className="ml-2 mt-2 sm:mt-0 text-gray-900 font-semibold text-xl">
               LevelUp Solutions
             </span>
           </Link>
           <div className="flex">
             <ul className="sm:flex justify-center hidden">
-              <li className="p-2 mr-4 text-white hover:text-blue-400 cursor-pointer">
+              <li className="p-2 mr-4 text-gray-900 hover:text-primary cursor-pointer">
                 <Link to="/">Beranda</Link>
               </li>
-              <li className="p-2 mr-4 text-white hover:text-blue-400 cursor-pointer">
+              <li className="p-2 mr-4 text-gray-900 hover:text-primary cursor-pointer">
                 <Link to="/about">Tentang Kami</Link>
               </li>
-              <li className="p-2 mr-4 text-white hover:text-blue-400 cursor-pointer">
+              <li className="p-2 mr-4 text-gray-900 hover:text-primary cursor-pointer">
                 <Link to="/services">Pelayanan</Link>
               </li>
               {/* Katalog Dropdown */}
-              <li className="p-2 mr-4 text-white hover:text-blue-400 cursor-pointer relative">
+              <li className="p-2 mr-4 text-gray-900 hover:text-primary cursor-pointer relative">
                 <button onClick={toggleDropdown} className="flex items-center">
                   Katalog
                   <svg
@@ -62,7 +86,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/produk"
-                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        className="block px-4 py-2 text-gray-900 hover:bg-gray-100"
                       >
                         Produk
                       </Link>
@@ -70,7 +94,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/UMKM"
-                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        className="block px-4 py-2 text-gray-900 hover:bg-gray-100"
                       >
                         UMKM
                       </Link>
@@ -83,11 +107,12 @@ const Navbar = () => {
           <div className="flex">
             <button
               type="button"
-              className="bg-blue-600 px-4 py-2 text-white hidden sm:block rounded-xl mr-2 hover:bg-blue-500"
-            >Daftar Sekarang
+              className="bg-red-600 px-4 py-2 text-white hidden sm:block rounded-xl mr-2 hover:bg-red-800"
+            >
+              Daftar Sekarang
             </button>
             <button onClick={() => setOpen(!open)} className="sm:hidden block">
-              <GiHamburgerMenu size={30} className="mt-2 mr-2 text-white/70" />
+              <GiHamburgerMenu size={30} className="mt-2 mr-2 text-gray-900" />
             </button>
           </div>
         </div>
@@ -96,17 +121,17 @@ const Navbar = () => {
         {open && (
           <div className="sm:hidden">
             <ul className="pt-4">
-              <li className="text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4">
+              <li className="text-gray-900 hover:text-primary font-semibold pl-8 cursor-pointer pb-4">
                 <Link to="/">Beranda</Link>
               </li>
-              <li className="text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4">
+              <li className="text-gray-900 hover:text-primary font-semibold pl-8 cursor-pointer pb-4">
                 <Link to="/about">Tentang Kami</Link>
               </li>
-              <li className="text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4">
+              <li className="text-gray-900 hover:text-primary font-semibold pl-8 cursor-pointer pb-4">
                 <Link to="/services">Pelayanan</Link>
               </li>
               {/* Katalog Dropdown */}
-              <li className="text-white hover:text-blue-400 font-semibold pl-8 cursor-pointer pb-4 relative">
+              <li className="text-gray-900 hover:text-primary font-semibold pl-8 cursor-pointer pb-4 relative">
                 <button onClick={toggleDropdown} className="flex items-center">
                   Katalog
                   <svg
@@ -150,7 +175,7 @@ const Navbar = () => {
               <li className="text-right pt-4 pr-4">
                 <button
                   type="button"
-                  className="bg-blue-600 px-4 py-2 mb-5 text-white rounded-xl hover:bg-blue-500"
+                  className="bg-red-600 px-4 py-2 mb-5 text-white rounded-xl hover:bg-red-800"
                 >
                   Daftar Sekarang
                 </button>
