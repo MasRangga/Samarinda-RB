@@ -1,20 +1,31 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import { FaWhatsapp } from "react-icons/fa";
+import CopyRight2 from "../../components/CopyRight/CopyRight2";
 
-// GambarProduk
-import Loa1 from "../../images/Produkkk/Loa1.jpeg"
-import Loa2 from "../../images/Produkkk/Loa2.jpeg"
-import Loa3 from "../../images/Produkkk/Loa3.jpeg"
-import Loa4 from "../../images/Produkkk/Loa4.jpeg"
-import Loa5 from "../../images/Produkkk/Loa5.jpeg"
-import Loa6 from "../../images/Produkkk/Loa6.jpeg"
-import Loa7 from "../../images/Produkkk/Loa7.jpeg"
+// GambarProduk LoaHoney
+import Loa1 from "../../images/Produkkk/Loa1.jpeg";
+import Loa2 from "../../images/Produkkk/Loa2.jpeg";
+import Loa3 from "../../images/Produkkk/Loa3.jpeg";
+import Loa4 from "../../images/Produkkk/Loa4.jpeg";
+import Loa5 from "../../images/Produkkk/Loa5.jpeg";
+import Loa6 from "../../images/Produkkk/Loa6.jpeg";
+import Loa7 from "../../images/Produkkk/Loa7.jpeg";
+
+// HijabBorneo
+import HB1 from "../../images/Produkkk/HijabBorneo/HB1.jpeg";
+import HB2 from "../../images/Produkkk/HijabBorneo/HB2.jpeg";
+import HB3 from "../../images/Produkkk/HijabBorneo/HB3.jpeg";
+import HB4 from "../../images/Produkkk/HijabBorneo/HB4.jpeg";
+import HB5 from "../../images/Produkkk/HijabBorneo/HB5.jpeg";
+import HB6 from "../../images/Produkkk/HijabBorneo/HB6.jpeg";
 
 const products = [
+  // LoaHoney
   {
     id: 1,
     name: "Madu Mellifera",
+    category: "Loa Honey", // Tambahkan kategori
     image: Loa1,
     detailImg: Loa1,
     description:
@@ -26,6 +37,7 @@ const products = [
   {
     id: 2,
     name: "Madu Kelulut Borneo",
+    category: "Loa Honey", // Tambahkan kategori
     image: Loa2,
     detailImg: Loa2,
     description:
@@ -37,6 +49,7 @@ const products = [
   {
     id: 3,
     name: "Madu Borneo Hutan Liar",
+    category: "Loa Honey", // Tambahkan kategori
     image: Loa3,
     detailImg: Loa3,
     description:
@@ -48,6 +61,7 @@ const products = [
   {
     id: 4,
     name: "Madu Borneo Hutan Liar",
+    category: "Loa Honey", // Tambahkan kategori
     image: Loa4,
     detailImg: Loa4,
     description:
@@ -59,6 +73,7 @@ const products = [
   {
     id: 5,
     name: "Madu Borneo Hutan Liar",
+    category: "Loa Honey", // Tambahkan kategori
     image: Loa5,
     detailImg: Loa5,
     description:
@@ -70,6 +85,7 @@ const products = [
   {
     id: 6,
     name: "Madu Akasia",
+    category: "Loa Honey", // Tambahkan kategori
     image: Loa6,
     detailImg: Loa6,
     description:
@@ -81,19 +97,83 @@ const products = [
   {
     id: 7,
     name: "--",
+    category: "Loa Honey", // Tambahkan kategori
     image: Loa7,
     detailImg: Loa7,
     description:
       "Durable backpack with multiple compartments for your daily needs.",
-    price: "Rp ---",
+    price: "Rp -",
     whatsappMessage:
       "Hello,%20selamat%20datang%20di%20Rumah%20BUMN%20Samarinda.%20Silahkan%20di%20order%20produk%20kami.",
+  },
+
+  // HijabBorneo
+  {
+    id: 8,
+    name: "Syal Batik Ukiran",
+    category: "Hijab Borneo", // Tambahkan kategori
+    image: HB1,
+    detailImg: HB1,
+    description:
+      "Hijab elegan dengan motif khas Borneo, cocok untuk berbagai acara.",
+    price: "Rp -",
+    whatsappMessage:
+      "Hello,%20selamat%20datang%20di%20Rumah%20BUMN%20Samarinda.%20Silahkan%20di%20order%20Hijab%20Borneo%201%20kami.",
+  },
+  {
+    id: 9,
+    name: "Hijab Ukiran Silver/Gold",
+    category: "Hijab Borneo", // Tambahkan kategori
+    image: HB2,
+    detailImg: HB2,
+    description:
+      "Hijab berkualitas dengan bahan lembut dan nyaman, motif unik dari Borneo.",
+    price: "Rp -",
+    whatsappMessage:
+      "Hello,%20selamat%20datang%20di%20Rumah%20BUMN%20Samarinda.%20Silahkan%20di%20order%20Hijab%20Borneo%202%20kami.",
+  },
+  {
+    id: 10,
+    name: "Hijab Syar`i Ukiran Silver/Gold",
+    category: "Hijab Borneo", // Tambahkan kategori
+    image: HB3,
+    detailImg: HB3,
+    description:
+      "Hijab cantik dengan warna cerah dan desain etnik Borneo yang memukau.",
+    price: "Rp -",
+    whatsappMessage:
+      "Hello,%20selamat%20datang%20di%20Rumah%20BUMN%20Samarinda.%20Silahkan%20di%20order%20Hijab%20Borneo%203%20kami.",
+  },
+  {
+    id: 11,
+    name: "Hijab Syar`i Ukiran Warna",
+    category: "Hijab Borneo", // Tambahkan kategori
+    image: HB4,
+    detailImg: HB4,
+    description:
+      "Hijab premium dengan motif eksklusif dari Borneo, cocok untuk acara formal.",
+    price: "Rp -",
+    whatsappMessage:
+      "Hello,%20selamat%20datang%20di%20Rumah%20BUMN%20Samarinda.%20Silahkan%20di%20order%20Hijab%20Borneo%204%20kami.",
+  },
+  {
+    id: 12,
+    name: "Hijab Standart Ukiran Warna ",
+    category: "Hijab Borneo", // Tambahkan kategori
+    image: HB6,
+    detailImg: HB6,
+    description:
+      "Hijab simpel dan elegan, cocok untuk dipakai sehari-hari dengan motif Borneo.",
+    price: "Rp -",
+    whatsappMessage:
+      "Hello,%20selamat%20datang%20di%20Rumah%20BUMN%20Samarinda.%20Silahkan%20di%20order%20Hijab%20Borneo%206%20kami.",
   },
 ];
 
 const Produkk = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("All"); // State untuk kategori
 
   const openModal = (product) => {
     setSelectedProduct(product);
@@ -105,6 +185,12 @@ const Produkk = () => {
     setSelectedProduct(null);
   };
 
+  // Filter produk berdasarkan kategori yang dipilih
+  const filteredProducts =
+    selectedCategory === "All"
+      ? products
+      : products.filter((product) => product.category === selectedCategory);
+
   return (
     <>
       <Navbar />
@@ -113,20 +199,53 @@ const Produkk = () => {
           {/* Judul */}
           <div className="flex flex-col mx-5 my-10">
             <h2 className="text-primary font-semibold text-5xl">Produk UMKM</h2>
-            <p className="text-base font-light text-slate-700 lg:text-lg">
-              Produk UMKM Unggulan di Rumah BUMN Samarinda
+            <p className="text-lg font-light text-slate-700 lg:text-xl">
+              Rumah BUMN Samarinda
             </p>
           </div>
           {/* end judul */}
 
-          {/* Tabs */}
+          {/* Tabs untuk kategori */}
+          <div role="tablist" className="tabs tabs-lifted mb-5">
+            <button
+              onClick={() => setSelectedCategory("All")}
+              className={`tab px-4 py-2 border rounded ${
+                selectedCategory === "All"
+                  ? "bg-gradient-to-r from-red-600 via-red-500 to-orange-400 text-white"
+                  : "bg-white text-black hover:bg-gray-200"
+              }`}
+            >
+              Semua Produk
+            </button>
+            <button
+              onClick={() => setSelectedCategory("Loa Honey")}
+              className={`tab px-4 py-2 border rounded ${
+                selectedCategory === "Loa Honey"
+                  ? "bg-gradient-to-r from-red-600 via-red-500 to-orange-400 text-white"
+                  : "bg-white text-black hover:bg-gray-200"
+              }`}
+            >
+              Loa Honey
+            </button>
+            <button
+              onClick={() => setSelectedCategory("Hijab Borneo")}
+              className={`tab px-4 py-2 border rounded ${
+                selectedCategory === "Hijab Borneo"
+                  ? "bg-gradient-to-r from-red-600 via-red-500 to-orange-400 text-white"
+                  : "bg-white text-black hover:bg-gray-200"
+              }`}
+            >
+              Hijab Borneo
+            </button>
+          </div>
 
           {/* Card Produk */}
           <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-10 mx-4">
-            {products.map((product) => (
+            {filteredProducts.map((product) => (
               <div
                 key={product.id}
                 className="relative shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl hover:brightness-110 duration-300 bg-gradient-to-r from-red-600 via-red-500 to-orange-400"
+                style={{ maxHeight: "450px", height: "100%" }} // Membatasi tinggi card produk
               >
                 {/* Image and overlay */}
                 <div className="relative group">
@@ -134,11 +253,15 @@ const Produkk = () => {
                     src={product.image}
                     className="rounded-tl-lg rounded-tr-lg w-full transition-transform transform group-hover:scale-105 duration-300"
                     alt={product.name}
-                    style={{ maxHeight: "500px" }}
+                    style={{
+                      maxHeight: "300px", // Membatasi tinggi gambar agar sesuai dengan ukuran card
+                      objectFit: "cover", // Mengisi card dengan gambar secara proporsional
+                      width: "100%", // Lebar gambar 100% dari card
+                    }}
                   />
 
                   {/* Overlay for large screens */}
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:flex hidden">
+                  <div className="absolute inset-0 bg-black bg-opacity-50 items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out lg:flex hidden transform group-hover:scale-105">
                     <div className="text-white space-y-4">
                       <a
                         className="bg-gradient-to-r from-green-600 to-green-400 rounded-full py-2 px-4 text-sm text-white flex items-center space-x-2 transition-transform transform hover:scale-105 hover:shadow-lg duration-300"
@@ -271,6 +394,7 @@ const Produkk = () => {
           )}
         </div>
       </div>
+      <CopyRight2 />
     </>
   );
 };

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import Icon from "../../images/level.png";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdOutlineFeaturedPlayList } from "react-icons/md";
+import { BsShop } from "react-icons/bs";
+import { FiShoppingBag } from "react-icons/fi";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -86,16 +89,20 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/produk"
-                        className="block px-4 py-2 text-gray-900 hover:bg-gray-100"
+                        className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-100"
                       >
+                        <FiShoppingBag 
+                        className="w-5 mr-2 h-5"/>
                         Produk
                       </Link>
                     </li>
                     <li>
                       <Link
                         to="/UMKM"
-                        className="block px-4 py-2 text-gray-900 hover:bg-gray-100"
+                        className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-100"
                       >
+                        <BsShop 
+                        className="w-5 mr-2 h-5"/>
                         UMKM
                       </Link>
                     </li>
@@ -104,15 +111,21 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="flex">
-            <button
-              type="button"
-              className="bg-red-600 px-4 py-2 text-white hidden sm:block rounded-xl mr-2 hover:bg-red-800"
+          <div className="flex items-center">
+            <a
+              href="http://bit.ly/JOINRUMAHBUMNSAMARINDA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-red-600 px-6 py-3 mb-5 text-white rounded-xl hover:bg-red-800 transition-colors duration-300 flex items-center justify-center space-x-2"
             >
-              Daftar Sekarang
-            </button>
-            <button onClick={() => setOpen(!open)} className="sm:hidden block">
-              <GiHamburgerMenu size={30} className="mt-2 mr-2 text-gray-900" />
+              <MdOutlineFeaturedPlayList />
+              <span>Daftar Sekarang</span>
+            </a>
+            <button
+              onClick={() => setOpen(!open)}
+              className="sm:hidden block ml-4"
+            >
+              <GiHamburgerMenu size={30} className="mt-2 text-gray-900" />
             </button>
           </div>
         </div>
@@ -155,16 +168,20 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/produk"
-                        className="block px-4 py-2 text-white hover:bg-gray-700"
+                        className="flex items-center px-4 py-2 text-white hover:bg-gray-700"
                       >
+                        <FiShoppingBag 
+                        className="w-5 mr-2 h-5"/>
                         Produk
                       </Link>
                     </li>
                     <li>
                       <Link
                         to="/UMKM"
-                        className="block px-4 py-2 text-white hover:bg-gray-700"
+                        className="flex items-center px-4 py-2 text-white hover:bg-gray-700"
                       >
+                        <BsShop 
+                        className="w-5 mr-2 h-5"/>
                         UMKM
                       </Link>
                     </li>
@@ -173,12 +190,15 @@ const Navbar = () => {
               </li>
               {/* Mobile Get Started button */}
               <li className="text-right pt-4 pr-4">
-                <button
-                  type="button"
-                  className="bg-red-600 px-4 py-2 mb-5 text-white rounded-xl hover:bg-red-800"
+                <a
+                  href="http://bit.ly/JOINRUMAHBUMNSAMARINDA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-red-600 px-6 py-3 mb-5 text-white rounded-xl hover:bg-red-800 transition-colors duration-300 flex items-center justify-center space-x-2"
                 >
-                  Daftar Sekarang
-                </button>
+                  <MdOutlineFeaturedPlayList />
+                  <span>Daftar Sekarang</span>
+                </a>
               </li>
             </ul>
           </div>
